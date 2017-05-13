@@ -149,10 +149,4 @@ class C extends B
 4-1
 集合类：是一个特殊的类，专门用来存放***其他类对象***的容器，
 主要完成一些数据库与数据结构的功能。使我们的程序更加强大更加简单。
-       
-集合类的分类：
- 1.List结构集合类：ArrayList LinkList Vector Stack
-
- 2.Map结构集合类 HashMap HsahTable
-
- 3.Set结构集合类 HashSet TreeSet
+      
