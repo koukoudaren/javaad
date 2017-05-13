@@ -1,0 +1,50 @@
+java的集合类
+4-1
+集合类：是一个特殊的类，专门用来存放***其他类对象***的容器，
+主要完成一些数据库与数据结构的功能。使我们的程序更加强大更加简单。
+       
+集合类的分类：
+ 1.List结构集合类：ArrayList LinkList Vector Stack
+
+ 2.Map结构集合类 HashMap HsahTable
+
+ 3.Set结构集合类 HashSet TreeSet
+ 4.....
+***
+先来讲ArryList
+ArryList kk=new ArryList();
+
+Xs xs1=new Xs("悟空"，15,90);
+
+kk.add(xs1);//将xs1这个对象添加到kk这个集合类中
+
+kk.size();//在kk这个集合类之中的对象的个数
+
+下面是如何将此对象进行显示
+Xs tv=(Xs)kk.get(0);****这里需要解释的是集合类存放对象与数组存放数据一样按顺序从零编号开始向下排列
+		    ****这里用到的时get方法，取出相应位置的的对象
+		    ****这里用到强转，kk.get(0)就是一个对象，强转的原因是输出用到Xs类里面的getName,等方法
+System.out.println("姓名是："+getName()+"年龄是："+getAge()+"成绩是："+"getMark()");
+
+****如果向删除一个对象用remov的方法
+kk.remove(0);//就可以删除一个对象
+
+
+4-2
+集合类的使用
+ArrayList和Vector区别于HashMapHashtable的区别相同：
+
+ArrayListyuHashMap都是线程异步的，效率高但是安全性低（单机的）
+Vector与HashTablie都是线程同步的，效率低安全性低（联网的）
+
+
+
+4-3
+****泛型与反射机制
+由于类型转换的错误，java虚拟机在编译的时候
+不会报错，而在运行的时候报告异常，所以安全隐患
+十分明显，我们用泛型来弥补这一缺点。有了泛型，我们在
+添加对象时就不用再强转了。
+     反射机制是用来将泛型固定的类的所有方法和成员
+全部显示出来，以供程序员可以确定程序的编写是否有误的机制
+
