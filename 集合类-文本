@@ -55,6 +55,32 @@ for(int i=0;i<bb.size();i++)
             System.out.println(((Sp)bb.getLast()).getMingcheng());//两个薯片
         } 
 }
+*************************************HashMap的用法，区别于ArryList
+HashMap kk=new HashMap();//在HashMap中不可以有属性完全相同的方法，键值也是属性之一
+Sp sp1=new Sp("001","饼干","5f");
+Sp sp2=new Sp("002","薯片","3f");
+kk.put("001",sp1);//不仅仅要添加对象还要给对象赋予相应的键值以区别不同的对象，以防冗余
+kk.put("002",sp2);//"001","001"为键值，用来区分对象
+if(kk.containKey("001")){
+	Sp sp=(Sp)ee.get("001");
+	System.out.println(Sp.getMingcheng());
+	System.out.println(Sp.getPrice());
+
+}else{
+	System.out.println("没有此商品!");
+}
+
+Iterator it=kk.keySet().iterator();//HashMap遍历的方法
+
+while(it.hasNext())//hasNext就是取下一个键值，没得取就说明遍历完成
+{
+
+	String key=it.next().toString();
+	Sp sp=(Sp)kk.get(key);
+	System.out.println(Sp.getMingcheng());
+	System.out.println(Sp.getPrice());
+
+}
 
 
 4-2
