@@ -30,6 +30,33 @@ System.out.println("姓名是："+getName()+"年龄是："+getAge()+"成绩是�
 kk.remove(0);//就可以删除一个对象
 
 
+LinkeList集合类
+
+LinkeLIst kk=new LinksList();
+Sp sp1=new Sp("001","饼干","5f");
+Sp sp2=new Sp("002","薯片","3f");
+
+kk.addFirst(sp1);//从底部开始放
+kk.addFirat(sp2); //先被放进去的后被取出来
+for(int i=0;i<bb.size();i++)
+       {
+        	System.out.println(((Sp)bb.get(i)).getMingcheng());//薯片-饼干
+        	System.out.println(((Sp)bb.getFirst()).getMingcheng());//俩个薯片（从顶部开始取）
+            System.out.println(((Sp)bb.getLast()).getMingcheng());//俩饼干（从底部开始取）
+         }      
+        
+        bb.addLast(sp1);
+        bb.addLast(sp2);//先被放进去的先取出来，如同排队一样，先进来的在前面，
+        
+        for(int i=0;i<bb.size();i++)
+        {
+        	System.out.println(((Sp)bb.get(i)).getMingcheng());//饼干-薯片
+        	System.out.println(((Sp)bb.getFirst()).getMingcheng());//两个饼干
+            System.out.println(((Sp)bb.getLast()).getMingcheng());//两个薯片
+        } 
+}
+
+
 4-2
 集合类的使用
 ArrayList和Vector区别于HashMapHashtable的区别相同：
