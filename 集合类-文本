@@ -157,7 +157,7 @@ class Bh<L>
    public void lxmc()
    {
 	   System.out.println("类型是"+l.getClass().getName());//取类型名称
-	   //Method []a=l.getClass().getDeclaredMethods();
+	   //Method []a=l.getClass().getDeclaredMethods();//取方法，方法放到a数组当中
 	   /*for(int i=0;i<a.length;i++)
 	   {
 		   System.out.println("函数名为"+a[i].getName());
