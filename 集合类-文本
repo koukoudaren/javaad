@@ -80,15 +80,19 @@ while(it.hasNext())//hasNext就是取下一个键值，没得取就说明遍历�
 	System.out.println(Sp.getMingcheng());
 	System.out.println(Sp.getPrice());
 
-}
+}//如果出现键值相同的，后面的会覆盖前面的
 
 
 4-2
 集合类的使用
+List与Map的区别是有无键值，键值就是唯一区别对象的标志
+*******键值是为了区别对象而单独添加的一个属性，一定不可以用对象本身的属性来做为键值
+
 ArrayList和Vector区别于HashMapHashtable的区别相同：
 
-ArrayListyuHashMap都是线程异步的，效率高但是安全性低（单机的）
+ArrayList与HashMap都是线程异步的，效率高但是安全性低（单机的）
 Vector与HashTablie都是线程同步的，效率低安全性低（联网的）
+用法上ArryList与Vector的用法基本一样，HashMap与HashTable的用法基本一样
 
 
 
@@ -98,6 +102,65 @@ Vector与HashTablie都是线程同步的，效率低安全性低（联网的）
 不会报错，而在运行的时候报告异常，所以安全隐患
 十分明显，我们用泛型来弥补这一缺点。有了泛型，我们在
 添加对象时就不用再强转了。
+简单的示例：
+Sp class{}
+Yl class{}
+public koukou class{
+	public static void main(String[] args){
+		ArryList<Sp> kk=new ArryList<Sp>();
+		Sp sp1=new Sp("001","饼干","5f");
+		Sp sp2=new Sp("002","薯片","3f");
+		kk.add(sp1);
+		kk.add(ap2);
+		Sp sp=(Sp)kk.get(0);
+		Yl yl=(Yl)kk.get(1);//会报错，前面用泛型使得此对象kk只能是Sp类，所以会报错
+	}
+}
+
+
      反射机制是用来将泛型固定的类的所有方法和成员
 全部显示出来，以供程序员可以确定程序的编写是否有误的机制
+import java.util.*;
+import java.lang.reflect.*;
+public class L4_7 
+{
+	public static void main(String[] args) 
+	{
+		//Bh<String> hw1=new Bh<String>("货物1"); 
+		Bh<Integer> hw2=new Bh<Integer>(123); 
+		//Bh<Wj> hw3=new Bh<Wj>(new Wj());
+		hw2.lxmc();
+	}
+}
+class Wj
+{
+	public void wan()
+	{
+		System.out.println("正在玩儿游戏！！");
+	}
+	public int jiafa(int a,int b)
+	{
+		return a+b;
+	}
+}
 
+
+class Bh<L>
+{
+   private L l;
+   
+   Bh(L l)
+   {
+	   this.l=l;
+   }
+   
+   public void lxmc()
+   {
+	   System.out.println("类型是"+l.getClass().getName());//取类型名称
+	   //Method []a=l.getClass().getDeclaredMethods();
+	   /*for(int i=0;i<a.length;i++)
+	   {
+		   System.out.println("函数名为"+a[i].getName());
+	   }*/
+   }
+}
