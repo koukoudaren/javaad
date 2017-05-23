@@ -1,0 +1,27 @@
+在这里讲义下配置文件
+package com.how2java.test;
+ 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+ 
+import com.how2java.pojo.Category;
+ 
+public class TestSpring {
+ 
+    public static void main(String[] args) {
+        ApplicationContext context = new ClassPathXmlApplicationContext(
+                new String[] { "applicationContext.xml" });
+ 
+        Category c = (Category) context.getBean("c");
+         
+        System.out.println(c.getName());
+    }
+}
+*******解读1
+new String[] { "applicationContext.xml" } 的意思是，String[] 数组中放多个配置文件，可以同时读取多个配置文件。
+当只有一个配置文件时，则可以写成如下方式
+ApplicationContext context = newClassPathXmlApplicationContext("applicationContext.xml" );
+******解读2
+src和bin必须有applicationContext.xml
+
+src下只是编写，真正运行是去classpath下寻找资源，在这里，即是去bin目录下寻找资源
